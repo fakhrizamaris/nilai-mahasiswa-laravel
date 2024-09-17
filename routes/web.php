@@ -16,10 +16,9 @@ use App\Http\Controllers\PDFController;
 */
 
 Route::get('/', function () {
-    return view('mahasiswa.index');
+    return redirect('/mahasiswa');
 });
 Route::get('/mahasiswa', 'MahasiswaController@index')->name('mahasiswa.index');
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF'])->name('mahasiswa.pdf');
 
 Route::resource('mahasiswa', MahasiswaController::class);
-
